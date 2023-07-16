@@ -1,0 +1,26 @@
+{
+  "name": "desafiovlog",
+  "version": "1.0.0",
+  "description": "noticias",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "flowbite": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielJL19/desafiovlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielJL19/desafiovlog/issues"
+  },
+  "homepage": "https://github.com/danielJL19/desafiovlog#readme"
+}
