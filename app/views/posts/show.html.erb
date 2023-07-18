@@ -1,2 +1,17 @@
 <h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h2 class="text-gray-900 text-6xl dark:text-white text-center mt-3 md:text-8x1"><%= @post.name %></h2>
+<p class="text-3xl font-normal text-gray-900 dark:text-white text-center mb-3"> <%= @post.description %> </p>
+<p>Creado por : <%= @post.user.name %> </p>
+<% if user_signed_in? %>
+    
+    <% if current_user.id == @post.user_id %>
+       
+        <%= link_to "Eliminar Noticia", post_path(@post), class:"focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900",data:{
+            turbo_method: :delete,
+            turbo_confirm: "Estás seguro?"
+        }%>
+        <%= link_to "Editar Noticia", edit_post_path(@post), class:"focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900" %>
+    <% end %>
+<% end %>
+
+<h3 class="my-5">Lista de comentarios</h3>

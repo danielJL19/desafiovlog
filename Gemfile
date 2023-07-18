@@ -74,3 +74,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "annotate", "~> 3.2"

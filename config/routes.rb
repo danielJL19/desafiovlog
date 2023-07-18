@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
   get 'pages/home'
-  get '/top_post', to: "pages#post"
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/edit'
 
+  resources :posts
 
   devise_for :users, controllers:{
     sessions: 'users/sessions',
@@ -13,6 +12,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "posts#index"
 
 end
