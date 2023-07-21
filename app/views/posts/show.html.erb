@@ -15,3 +15,21 @@
 <% end %>
 
 <h3 class="my-5">Lista de comentarios</h3>
+
+<% @post.comments.each do |comment|%>
+    <div class="my-3 border">
+        <h4> Comentario:  <%= comment.body %> </h4>
+        <p> Nombre: <%= comment.user.name %> </p>
+    </div>
+<% end %>
+<% if user_signed_in? %>
+    <%= form_with(model: [@post, @post.comments.build]) do |form|%>
+
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+
+        <%= form.submit %>
+    <% end %>
+<% else %>
+    Si quieres <%= link_to "Registrarte", new_user_registration_path %> para comentar
+<% end %>

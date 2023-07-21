@@ -26,5 +26,6 @@ class User < ApplicationRecord
   enum :role, [:normal_user, :admin]
 
   #relaciones
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

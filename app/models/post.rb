@@ -18,5 +18,5 @@ class Post < ApplicationRecord
   
   #relaciones
   belongs_to :user
-
+  has_many :comments, dependent: :destroy
 end

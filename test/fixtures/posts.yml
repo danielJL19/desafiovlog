@@ -15,10 +15,10 @@ one:
   name: MyString
   description: MyText
   user: one
-  status: 1
+  
 
 two:
   name: MyString
   description: MyText
   user: two
-  status: 1
+
