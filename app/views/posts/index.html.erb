@@ -1,15 +1,20 @@
-<h1>Posts#index</h1>
+
 <% if user_signed_in? %>
     <% if current_user.role == 'admin' %>
-        <p class="mb-2">Bienvenido estimado/a : <strong><%= current_user.name %></strong>  </p>
-        <p class="mb-3">Tipo de usuario: <strong> <%= current_user.role %> </strong> </p>
-        <%= link_to "Crear Post", new_post_path, class:"focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 my-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"%>
-        
+        <div class="ps-3">
+            <p class="mb-2">Bienvenido estimado/a : <strong><%= current_user.name %></strong>  </p>
+            <p class="mb-3">Tipo de usuario: <strong> <%= current_user.role %> </strong> </p>
+            <%= link_to "Crear Post", new_post_path, class:"focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 my-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"%>
+        </div>
     <% end %>
 <% end %>
-<h2 class="my-5 text-center md:text-start">Lista de noticias</h2>
 
-<div class="flex flex-col gap-3 md:flex-row">
+<h2 class="my-5 text-center md:text-start">Lista de noticias</h2>
+<%= search_form_for @q, class:"mb-3" do |f|%>
+  <%= f.hidden_field :name_cont  %>
+  <%= f.search_field :name_cont, class:"rounded", placeholder:"search" %>
+<% end %>
+<div class="flex flex-col gap-3 md:flex-row md:flex-wrap">
     <% @posts.each do |post| %>
         <%= render partial: "post", locals: {post: post} %>
     <% end %>

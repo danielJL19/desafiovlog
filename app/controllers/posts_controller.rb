@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   end
   before_action :find_post_user, only:[:destroy,:update,:edit]
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct:true)
   end
 
   def new
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to @post, notice:'Se ha modificado con éxito'
     else
       render :edit,status: :unprocessable_entity
     end
@@ -48,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name,:description)
+    params.require(:post).permit(:name,:description, :photo)
 
   end
 

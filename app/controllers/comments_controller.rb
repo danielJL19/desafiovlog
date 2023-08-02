@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comments_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_path(@post), notice: "se ha creado"
+      redirect_to post_path(@post)
     else
-      redirect_to post_path(@post), alert: "error al crearlo"
+      redirect_to post_path(@post), alert: "Error al crearlo"
     end
   end
 

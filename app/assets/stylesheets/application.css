@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.card-image{
+    height: 10rem;
+    margin-bottom: 0;
+}
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+
+ }

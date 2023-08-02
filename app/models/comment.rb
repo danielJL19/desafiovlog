@@ -10,6 +10,11 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
+
+  #validaciones
+  validates :body, presence:true
+
+  #relaciones
   belongs_to :user
   belongs_to :post
 end

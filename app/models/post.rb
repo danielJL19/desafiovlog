@@ -12,6 +12,8 @@
 #
 class Post < ApplicationRecord
 
+  has_one_attached :photo
+
   #validaciones
   validates :name, presence: true, uniqueness:true
   validates :description, presence: true
@@ -19,4 +21,9 @@ class Post < ApplicationRecord
   #relaciones
   belongs_to :user
   has_many :comments, dependent: :destroy
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]
+  end
+
 end
