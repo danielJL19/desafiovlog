@@ -1,24 +1,12 @@
-# README
+# UnPocoDeTodo
+Sitio web de blog en la cual puedes encontrar diferentes artículos de tu interes. Hay de todo tipo de variedad 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Visuales
 
-Things you may want to cover:
+## Empezando 🚀
+1. Debes clonar el repositorio
+```bash
+git clone 
+```
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
