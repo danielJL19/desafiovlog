@@ -2,7 +2,7 @@
 Sitio web de blog en la cual puedes encontrar diferentes artículos de tu interes. Hay de todo tipo de variedad 
 
 ## Visuales
-
+[![1.png](https://i.postimg.cc/59DPhWbt/1.png)](https://postimg.cc/14ccFTgx)
 ## Empezando 🚀
 
 1. Debes clonar el repositorio
